@@ -1,0 +1,7 @@
+allowBuilds:
+  esbuild: true
+  svelte-preprocess: false
+
+packages:
+  - 'apps/*'
+  - 'packages/*'

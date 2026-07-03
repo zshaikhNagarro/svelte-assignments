@@ -1,0 +1,18 @@
+{
+	"/": [
+		"src/routes/+layout.server.ts",
+		"src/routes/+layout.server.ts"
+	],
+	"/api/login": [
+		"src/routes/api/login/+server.ts"
+	],
+	"/api/logout": [
+		"src/routes/api/logout/+server.ts"
+	],
+	"/login": [
+		"src/routes/+layout.server.ts"
+	],
+	"/quiz": [
+		"src/routes/+layout.server.ts"
+	]
+}
