@@ -44,7 +44,7 @@
 
 <header>
 	<div class="corner">
-			SvelteKit
+			Welcome
 	</div>
 
 	<nav>
