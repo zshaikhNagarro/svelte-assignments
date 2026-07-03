@@ -4,16 +4,17 @@
 	"version": "0.0.1",
 	"type": "module",
 	"scripts": {
-		"dev": "vite dev",
-		"build": "vite build",
-		"preview": "vite preview",
-		"storybook": "storybook dev -p 6006",
-		"build-storybook": "storybook build",
-		"prepare": "svelte-kit sync || echo ''",
-		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-		"dev:app": "pnpm --filter myapp dev",
-		"dev:all": "pnpm -w -r dev"
+		"dev": "pnpm --filter myapp dev",
+		"build": "pnpm --filter myapp build",
+		"preview": "pnpm --filter myapp preview",
+		"dev:ui": "pnpm --filter @myorg/ui build --watch",
+		"dev:all": "pnpm -w -r dev",
+		"build:all": "pnpm -w -r build",
+		"storybook": "pnpm --filter myapp storybook",
+		"build-storybook": "pnpm --filter myapp build-storybook",
+		"prepare": "pnpm -r prepare",
+		"check": "pnpm --filter myapp check",
+		"check:watch": "pnpm --filter myapp check:watch"
 	},
 	"workspaces": [
 		"apps/*",

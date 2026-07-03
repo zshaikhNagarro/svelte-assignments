@@ -110,6 +110,7 @@
 				{#each currentQuestion().choices as choice, index}
 					<button
 						type="button"
+						class="choice"
 						class:selected={selectedChoice === index}
 						onclick={() => chooseQuestion(index)}
 					>
@@ -119,7 +120,7 @@
 			</div>
 
 			<div class="actions">
-				<button type="button" onclick={submitAnswer} disabled={!canSubmit()}>Submit answer</button>
+				<button class="submit-btn" type="button" onclick={submitAnswer} disabled={!canSubmit()}>Submit answer</button>
 				{#if feedback}
 					<div class="feedback {feedback}">
 						{#if feedback === 'correct'}
@@ -128,7 +129,7 @@
 							Incorrect. {currentQuestion().explanation}
 						{/if}
 					</div>
-					<button type="button" onclick={nextQuestion}>
+					<button class="next-btn" type="button" onclick={nextQuestion}>
 						{nextButtonLabel()}
 					</button>
 				{/if}
@@ -144,6 +145,32 @@
 		gap: 1.5rem;
 	}
 
+	.submit-btn, .next-btn {
+			display: inline-block;
+			margin: 1rem 0;
+			padding: 0.75rem 1.25rem;
+			background: #ff3e00;
+			color: white;
+			text-decoration: none;
+			border-radius: 0.75rem;
+			font-weight: bold;
+			transition: transform 0.2s ease, background 0.2s ease;
+	}
+
+	.choice {
+		display: inline-block;
+		padding: 0.75rem 1.25rem;
+		background: #ff3e00;
+		color: white;
+		text-decoration: none;
+		border-radius: 0.75rem;
+		font-weight: bold;
+		transition: transform 0.2s ease, background 0.2s ease;
+		&.selected {
+			background: rgb(226, 222, 220);
+			color: #333;
+		}
+	}
 	.intro {
 		max-width: 42rem;
 	}
@@ -173,7 +200,6 @@
 
 	.choices {
 		display: grid;
-		dap: 0.75rem;
+		gap: 0.75rem;
 	}
-
-I will continue copying remaining files into apps/myapp. The assistant will proceed. Please confirm if you want files preserved at root as backup or removed after moving. If preserved, I'll keep originals and only copy; otherwise I'll delete originals. Which do you prefer?
+</style>

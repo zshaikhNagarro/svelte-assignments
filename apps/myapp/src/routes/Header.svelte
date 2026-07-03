@@ -2,8 +2,6 @@
 	import { resolve } from '$app/paths';
 	import { page } from '$app/state';
 	import { onMount } from 'svelte';
-	import github from '$lib/images/github.svg';
-	import logo from '$lib/images/svelte-logo.svg';
 
 	interface Props {
 		session?: {
@@ -46,9 +44,7 @@
 
 <header>
 	<div class="corner">
-		<a href="https://svelte.dev/docs/kit">
-			<img src={logo} alt="SvelteKit" />
-		</a>
+			SvelteKit
 	</div>
 
 	<nav>
@@ -61,9 +57,6 @@
 			</li>
 			<li aria-current={page.url.pathname === '/quiz' ? 'page' : undefined}>
 				<a href={resolve('/quiz')}>Quiz</a>
-			</li>
-			<li aria-current={page.url.pathname.startsWith('/sverdle') ? 'page' : undefined}>
-				<a href={resolve('/sverdle')}>Sverdle</a>
 			</li>
 			{#if !sessionState.isLoggedIn}
 				<li>
@@ -83,9 +76,7 @@
 				{logoutLoading ? 'Logging out...' : 'Logout'}
 			</button>
 		{:else}
-			<a href="https://github.com/sveltejs/kit">
-				<img src={github} alt="GitHub" />
-			</a>
+			<span class="username"></span>
 		{/if}
 	</div>
 </header>

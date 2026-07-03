@@ -13,6 +13,7 @@
 		"src/routes/+layout.server.ts"
 	],
 	"/quiz": [
+		"src/routes/quiz/+page.server.ts",
 		"src/routes/+layout.server.ts"
 	]
 }
